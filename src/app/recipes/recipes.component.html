@@ -1,0 +1,29 @@
+
+<section class="text-white bg-black  ">
+    <div class="container  bg-black ">
+        <h1 class="text-center p-4 w-100 " >Pizza Recipes</h1>
+        <div id="recipes" class="row"></div>
+    </div>
+<div class="container  d-flex  flex-wrap">
+
+
+    <div class="w-100 h-100 d-flex justify-content-center align-items-center "  *ngIf="isLoading">
+        <app-loading ></app-loading>
+
+    </div>
+
+    <div class="col-md-3 recipe-card " *ngFor="let recipes of recipes">
+
+        <div class="card bg-danger  text-white rounded-4">
+            <img [src]=" recipes.image_url" class="card-img-top w-100 img-fluid"  >
+            <div class="card-body">
+                <h4 class="card-title">{{ recipes.publisher}}</h4>
+                <p>{{ recipes.title }}</p>
+            </div>
+        </div>
+    </div>
+
+        
+</div>
+
+</section>
